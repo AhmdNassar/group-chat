@@ -19,7 +19,6 @@ def receive():
             print(msg)
 
         except OSError:
-            
             break
         
 def send():
@@ -37,8 +36,6 @@ def send():
 
 if  __name__ == "__main__":
     client = connecnt()
-    
-    
     receive_thread = Thread(target=receive)
     send_thread = Thread(target=send)
     receive_thread.start()

@@ -8,7 +8,7 @@ clients = {}
 addresses = {}
 
 def initServer():
-        HOST = input("Enter server IPv4: ")
+        HOST = input("Enter server ipV4: ")
         PORT = 33000
         BUFSIZ = 1024
         ADDR = (HOST, PORT)
@@ -47,7 +47,7 @@ def handle_client(client):
 
 def send_msg(msg,name="",c=""):
     for s in clients:
-        if  c == "" or s != c :
+        if   s != c :
                 s.send(bytes(name,"utf8")+msg)
 
 if __name__ == "__main__":
