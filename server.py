@@ -1,6 +1,6 @@
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import Thread
-
+import socket as sc 
 """
 global variables 
 """
@@ -8,13 +8,14 @@ clients = {}
 addresses = {}
 
 def initServer():
-        HOST = input("Enter server ipV4: ")
+        HOST = sc.gethostbyname(sc.gethostname()) #input("Enter server ipV4: ")
         PORT = 33000
         BUFSIZ = 1024
         ADDR = (HOST, PORT)
         s = socket(AF_INET, SOCK_STREAM)
         s.bind(ADDR)
         s.listen(6)
+        print("server created and it's ADDR is : ",ADDR)
         return s , BUFSIZ
 
 def accept_conn():
